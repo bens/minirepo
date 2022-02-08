@@ -4,15 +4,15 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 def workspace_dependencies():
     http_archive(
         name = "bazel_skylib",
-        sha256 = "1dde365491125a3db70731e25658dfdd3bc5dbdfd11b840b3e987ecf043c7ca0",
-        url = "https://github.com/bazelbuild/bazel-skylib/releases/download/0.9.0/bazel_skylib-0.9.0.tar.gz",
+        sha256 = "c6966ec828da198c5d9adbaa94c05e3a1c7f21bd012a0b29ba8ddbccb2c93b0d",
+        urls = ["https://github.com/bazelbuild/bazel-skylib/releases/download/1.1.1/bazel-skylib-1.1.1.tar.gz"],
     )
 
     http_archive(
         name = "io_tweag_rules_nixpkgs",
-        sha256 = "5c80f5ed7b399a857dd04aa81e66efcb012906b268ce607aaf491d8d71f456c8",
-        strip_prefix = "rules_nixpkgs-0.7.0",
-        urls = ["https://github.com/tweag/rules_nixpkgs/archive/v0.7.0.tar.gz"],
+        sha256 = "7aee35c95251c1751e765f7da09c3bb096d41e6d6dca3c72544781a5573be4aa",
+        strip_prefix = "rules_nixpkgs-0.8.0",
+        urls = ["https://github.com/tweag/rules_nixpkgs/archive/refs/tags/v0.8.0.tar.gz"],
     )
 
     http_archive(
@@ -22,32 +22,39 @@ def workspace_dependencies():
         urls = ["https://github.com/tweag/rules_sh/archive/v0.2.0.tar.gz"],
     )
 
-    git_repository(
+    http_archive(
         name = "rules_python",
-        commit = "4b84ad270387a7c439ebdccfd530e2339601ef27",
-        remote = "https://github.com/bazelbuild/rules_python.git",
-        shallow_since = "1564776078 -0400",
+        sha256 = "a30abdfc7126d497a7698c29c46ea9901c6392d6ed315171a6df5ce433aa4502",
+        strip_prefix = "rules_python-0.6.0",
+        urls = ["https://github.com/bazelbuild/rules_python/archive/refs/tags/0.6.0.tar.gz"],
     )
 
     http_archive(
         name = "rules_haskell",
-        sha256 = "dc21a9b30734ab0fce58c2107656aac004a92c3caef913e54082335abc7cf468",
-        strip_prefix = "rules_haskell-a5a550874d5be8852755bd9bfe3f6d9a8d3ba793",
-        urls = ["https://github.com/tweag/rules_haskell/archive/a5a550874d5be8852755bd9bfe3f6d9a8d3ba793.tar.gz"],
+        sha256 = "851e16edc7c33b977649d66f2f587071dde178a6e5bcfeca5fe9ebbe81924334",
+        strip_prefix = "rules_haskell-0.14",
+        urls = ["https://github.com/tweag/rules_haskell/archive/v0.14.tar.gz"],
     )
 
     http_archive(
         name = "io_bazel_rules_go",
         urls = [
-            "https://storage.googleapis.com/bazel-mirror/github.com/bazelbuild/rules_go/releases/download/v0.20.2/rules_go-v0.20.2.tar.gz",
-            "https://github.com/bazelbuild/rules_go/releases/download/v0.20.2/rules_go-v0.20.2.tar.gz",
+            "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.29.0/rules_go-v0.29.0.zip",
+            "https://github.com/bazelbuild/rules_go/releases/download/v0.29.0/rules_go-v0.29.0.zip",
         ],
-        sha256 = "b9aa86ec08a292b97ec4591cf578e020b35f98e12173bbd4a921f84f583aebd9",
+        sha256 = "2b1641428dff9018f9e85c0384f03ec6c10660d935b750e3fa1492a281a53b0f",
     )
 
     http_archive(
         name = "io_bazel_rules_docker",
-        sha256 = "dc97fccceacd4c6be14e800b2a00693d5e8d07f69ee187babfd04a80a9f8e250",
-        strip_prefix = "rules_docker-0.14.1",
-        urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.14.1/rules_docker-v0.14.1.tar.gz"],
+        sha256 = "85ffff62a4c22a74dbd98d05da6cf40f497344b3dbf1e1ab0a37ab2a1a6ca014",
+        strip_prefix = "rules_docker-0.23.0",
+        urls = ["https://github.com/bazelbuild/rules_docker/releases/download/v0.23.0/rules_docker-v0.23.0.tar.gz"],
+    )
+
+    http_archive(
+        name = "rules_cc",
+        sha256 = "935e2644125fccb36fa858495697301f7834d980d0e16419943b9618af2771a4",
+        strip_prefix = "rules_cc-0.0.1",
+        urls = ["https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.1.tar.gz"],
     )

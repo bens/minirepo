@@ -8,14 +8,14 @@
 let
   # The version of Nixpkgs we will pin for our tooling.
   baseNixpkgs = builtins.fetchTarball {
-    name = "nixos-unstable-2020-06-22";
+    name = "nixos-21.11";
 
     # Update the "name" attribute if/when you change this
-    url = https://github.com/NixOS/nixpkgs/archive/dca182df882db483cea5bb0115fea82304157ba1.tar.gz;
+    url = https://github.com/NixOS/nixpkgs/archive/refs/tags/21.11.tar.gz;
 
     # You can obtain an appropriate hash using
     # `nix-prefetch-url --unpack <url>`.
-    sha256 = "0193bpsg1ssr93ihndyv7shz6ivsm8cvaxxl72mc7vfb8d1bwx55";
+    sha256 = "162dywda2dvfj1248afxc45kcrg83appjd0nmdb541hl7rnncf02";
   };
 
   # If you need a different version or a custom build of a tool, or perhaps a

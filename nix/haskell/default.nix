@@ -14,14 +14,14 @@ let
   # Nixpkgs pin, we should get packages which a. work more often than not and b.
   # are more frequently cached by standard Nixpkgs infrastructure.
   baseNixpkgs = builtins.fetchTarball {
-    name = "nixos-unstable-2020-06-22";
+    name = "nixos-21.11";
 
     # Update the "name" attribute if/when you change this
-    url = https://github.com/NixOS/nixpkgs/archive/dca182df882db483cea5bb0115fea82304157ba1.tar.gz;
+    url = https://github.com/NixOS/nixpkgs/archive/refs/tags/21.11.tar.gz;
 
     # You can obtain an appropriate hash using
     # `nix-prefetch-url --unpack <url>`.
-    sha256 = "0193bpsg1ssr93ihndyv7shz6ivsm8cvaxxl72mc7vfb8d1bwx55";
+    sha256 = "162dywda2dvfj1248afxc45kcrg83appjd0nmdb541hl7rnncf02";
   };
 
   # `static-haskell-nix` is a repository maintained by @nh2 that documents and
@@ -31,7 +31,7 @@ let
   # will be building the rest), but we need it nonetheless (thanks, @nh2!). So
   # we pin a version here that exposes the GHC version we are interested in.
   staticHaskellNixpkgs = builtins.fetchTarball
-    https://github.com/nh2/static-haskell-nix/archive/dbce18f4808d27f6a51ce31585078b49c86bd2b5.tar.gz;
+    https://github.com/nh2/static-haskell-nix/archive/bd66b86b72cff4479e1c76d5916a853c38d09837.tar.gz;
 
   # The `static-haskell-nix` repository contains several entry points for e.g.
   # setting up a project in which Nix is used solely as the build/package
